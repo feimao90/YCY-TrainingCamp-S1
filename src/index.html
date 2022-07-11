@@ -1,33 +1,38 @@
 <html>
-<head>
+  <head>
     <title>猿创营</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,user-scalable=no">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,user-scalable=no" />
     <style type="text/css">
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-        div {
-            width: 100%;
-        }
+      div {
+        width: 100%;
+      }
     </style>
     <script src="https://pixijs.download/release/pixi.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="./js/brakebanner.js"></script>
     <script>
-        window.onload = init;
+      window.onload = init
 
-        function init() {
-            let banner = new BrakeBanner("#brakebanner");
-        }
+      function init() {
+        let banner = new BrakeBanner('#brakebanner')
+      }
+
+      let type = 'WebGL'
+      if (!PIXI.utils.isWebGLSupported()) {
+        type = 'canvas'
+      }
+      PIXI.utils.sayHello(type)
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="brakebanner"></div>
-</body>
-
+  </body>
 </html>
